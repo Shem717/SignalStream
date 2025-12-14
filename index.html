@@ -29,6 +29,10 @@
       --error: #ef4444;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -1542,11 +1546,27 @@
         emailInput.classList.remove("error");
         setLoading(true);
 
+        // Capture UTM parameters from URL
+        const params = new URLSearchParams(window.location.search);
+        const utm_source = params.get("utm_source") || "";
+        const utm_medium = params.get("utm_medium") || "";
+        const utm_campaign = params.get("utm_campaign") || "";
+        const utm_term = params.get("utm_term") || "";
+        const utm_content = params.get("utm_content") || "";
+
         try {
           const res = await fetch("/api/waitlist", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email, company: honeypot }),
+            body: JSON.stringify({
+              email,
+              company: honeypot,
+              utm_source,
+              utm_medium,
+              utm_campaign,
+              utm_term,
+              utm_content,
+            }),
           });
 
           const data = await res.json();
