@@ -1007,6 +1007,17 @@
       font-size: 0.875rem;
     }
 
+    .dashboard-preview-link {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    .dashboard-preview-link:hover {
+      color: var(--text-primary);
+    }
+
     /* Animations */
     @keyframes fadeUp {
       from {
@@ -1083,6 +1094,7 @@
         SignalStream
       </div>
       <div class="nav-links">
+        <a href="dashboard_preview.html" target="_blank">Snapshot</a>
         <a href="#how-it-works">How It Works</a>
         <a href="#features">Features</a>
         <a href="#pricing">Pricing</a>
@@ -1462,6 +1474,12 @@
             </svg>
           </button>
         </form>
+
+        <div style="margin-top: 16px;">
+          <a href="dashboard_preview.html" target="_blank" class="dashboard-preview-link">
+            Dashboard Snapshot ↗
+          </a>
+        </div>
 
         <div class="form-message" id="form-message"></div>
       </div>
