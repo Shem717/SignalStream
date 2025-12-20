@@ -298,7 +298,79 @@
       margin-bottom: 12px;
     }
 
-    /* Golden Nugget */
+
+
+    /* Verification timestamps (clickable) */
+    .timestamp-link{
+      color: var(--info);
+      text-decoration: none;
+      font-weight: 700;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      padding: 1px 6px;
+      border-radius: 6px;
+      background: rgba(129, 140, 248, 0.12);
+      border: 1px solid rgba(129, 140, 248, 0.18);
+      margin: 0 2px;
+      display: inline-block;
+    }
+    .timestamp-link:hover{
+      text-decoration: underline;
+      background: rgba(129, 140, 248, 0.18);
+    }
+
+    /* Action Queue enhancements */
+    .mini-actions{
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .status-pill{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
+      border: 1px solid rgba(251,191,36,0.22);
+      background: rgba(251,191,36,0.08);
+      color: var(--accent);
+      white-space: nowrap;
+    }
+
+    .status-pill.nudge{
+      border-color: rgba(99,102,241,0.25);
+      background: rgba(99,102,241,0.12);
+      color: var(--info);
+    }
+
+    .status-pill.overdue{
+      border-color: rgba(239,68,68,0.25);
+      background: rgba(239,68,68,0.10);
+      color: #ef4444;
+    }
+
+    .mini-complete{
+      appearance:none;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.03);
+      color: var(--text);
+      padding: 6px 10px;
+      border-radius: 10px;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, transform 0.05s;
+      white-space: nowrap;
+    }
+    .mini-complete:hover{
+      border-color: rgba(16,185,129,0.35);
+      background: rgba(16,185,129,0.10);
+    }
+    .mini-complete:active{ transform: translateY(1px); }
+
+/* Golden Nugget */
     .golden-nugget {
       background: linear-gradient(135deg, rgba(251, 191, 36, 0.1) 0%, rgba(245, 158, 11, 0.05) 100%);
       border: 1px solid rgba(251, 191, 36, 0.3);
@@ -697,7 +769,7 @@
           <div class="mini-item">
             <div class="mini-title">
               <span><span class="tag action">Action</span> Instrument activation by cohort</span>
-              <span class="time-badge">Today</span>
+              <span class="mini-actions"><span class="status-pill">Due in 2 days</span><button class="mini-complete" type="button">Mark complete</button></span>
             </div>
             <div class="mini-meta">Source: Lenny’s Podcast • “PLG Metrics That Matter”</div>
             <div class="mini-text">Track cohort activation to the “aha moment” within session one; 40% hitting it is an early PMF signal.</div>
@@ -706,7 +778,7 @@
           <div class="mini-item">
             <div class="mini-title">
               <span><span class="tag action">Action</span> Pre-commit launch distribution</span>
-              <span class="time-badge">This week</span>
+              <span class="mini-actions"><span class="status-pill nudge">Nudge Sent</span><button class="mini-complete" type="button">Mark complete</button></span>
             </div>
             <div class="mini-meta">Source: r/SaaS • Launch breakdown</div>
             <div class="mini-text">Build a 50-person upvoter/advocate list before launch; schedule outreach cadence (100 DMs/day).</div>
@@ -715,7 +787,7 @@
           <div class="mini-item">
             <div class="mini-title">
               <span><span class="tag action">Action</span> Define community message density KPI</span>
-              <span class="time-badge">This week</span>
+              <span class="mini-actions"><span class="status-pill">Due in 5 days</span><button class="mini-complete" type="button">Mark complete</button></span>
             </div>
             <div class="mini-meta">Source: Greg Isenberg • Community-led growth</div>
             <div class="mini-text">Target 2+ messages/member/week; treat it as a leading indicator for conversion lift vs email-only lists.</div>
@@ -737,7 +809,7 @@
 
           <div class="kpi-row">
             <div class="stat-card">
-              <div class="stat-label">Content Processed</div>
+              <div class="stat-label">Active Sources Monitored</div>
               <div class="stat-value">24</div>
               <div class="stat-change">↑ 8 from yesterday</div>
             </div>
@@ -752,9 +824,9 @@
               <div class="stat-change">High-value insights</div>
             </div>
             <div class="stat-card">
-              <div class="stat-label">Action Items</div>
+              <div class="stat-label">Actions Completed</div>
               <div class="stat-value">3</div>
-              <div class="stat-change">Ready to implement</div>
+              <div class="stat-change">Execution momentum</div>
             </div>
           </div>
         </div>
@@ -825,9 +897,8 @@
               </div>
               <div class="extraction-meta">Guest: Sam Parr • Relevance: SaaS pricing, growth tactics</div>
               <div class="extraction-text">
-                Sam reveals his exact email monetization strategy: tiered sponsorships based on placement (top = 2x rate),
-                audience segmentation for targeted campaigns, and the "ascension model" for converting free readers to
-                paid.
+                Sam reveals his exact email monetization strategy: tiered sponsorships based on placement <a href="#" class="timestamp-link">[32:15]</a> (top = 2x rate),
+                audience segmentation for targeted campaigns <a href="#" class="timestamp-link">[34:02]</a>, and the "ascension model" for converting free readers to paid <a href="#" class="timestamp-link">[41:09]</a>.
               </div>
               <div class="golden-nugget">
                 <div class="golden-nugget-label">✨ Golden Nugget</div>
@@ -845,7 +916,7 @@
               <div class="extraction-meta">Guest: Elena Verna • Relevance: Product-led growth</div>
               <div class="extraction-text">
                 <span class="tag action">Action Item</span>
-                Track activation rate by cohort, not aggregate. Focus on "aha moment" within first session.
+                Track activation rate by cohort, not aggregate. Focus on "aha moment" within first session <a href="#" class="timestamp-link">[18:44]</a>.
                 The 40% rule: if 40% of users hit your aha moment in session one, you have PMF signal.
               </div>
             </div>
@@ -875,7 +946,7 @@
               <div class="extraction-text">
                 <span class="tag framework">Framework</span>
                 The "Do Things That Don't Scale" playbook: manually onboard first 10 users,
-                personally solve their problems, identify patterns, then systematize.
+                personally solve their problems <a href="#" class="timestamp-link">[09:12]</a>, identify patterns, then systematize.
               </div>
               <div class="golden-nugget">
                 <div class="golden-nugget-label">✨ Golden Nugget</div>
@@ -894,7 +965,7 @@
               <div class="extraction-text">
                 <span class="tag insight">Insight</span>
                 Discord/Slack communities convert 3x better than email lists when properly nurtured.
-                Key metric: messages per member per week (target: 2+).
+                Key metric: messages per member per week (target: 2+) <a href="#" class="timestamp-link">[22:31]</a>.
               </div>
             </div>
           </div>
