@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SignalStream — Extract Value, Not Just Summaries</title>
+    <title>YourSignal — Extract Value, Not Just Summaries</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -1023,6 +1023,28 @@
             font-size: 0.875rem;
         }
 
+        .back-to-top {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 16px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 10px 18px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: var(--bg-secondary);
+            transition: all 0.2s ease;
+        }
+
+        .back-to-top:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+            transform: translateY(-1px);
+        }
+
         .dashboard-preview-link {
             color: var(--text-secondary);
             text-decoration: none;
@@ -1085,7 +1107,7 @@
         }
     </style>
 </head>
-<body>
+<body id="top">
     <div class="bg-gradient bg-gradient-1"></div>
     <div class="bg-gradient bg-gradient-2"></div>
     <div class="noise"></div>
@@ -1098,7 +1120,7 @@
                         <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
                     </svg>
                 </div>
-                SignalStream
+                YourSignal
             </div>
             <div class="nav-links">
                 <a href="dashboard_preview.html" target="_blank">Snapshot</a>
@@ -1120,7 +1142,7 @@
                 We <span class="highlight">Extract Its Value.</span>
             </h1>
             <p class="hero-subtitle fade-up delay-2">
-                Summaries compress everything equally. SignalStream <strong>ruthlessly extracts only what matters to your goals</strong>—from YouTube, articles, and Reddit—then delivers it in your preferred format.
+                Summaries compress everything equally. YourSignal <strong>ruthlessly extracts only what matters to your goals</strong>—from YouTube, articles, and Reddit—then delivers it in your preferred format.
             </p>
             <div class="cta-group fade-up delay-3">
                 <a href="#signup" class="btn-primary">
@@ -1513,7 +1535,8 @@
                     <a href="#">Terms</a>
                     <a href="#">Contact</a>
                 </div>
-                <p class="footer-copy">© 2025 SignalStream. We extract signal from noise so you don't have to.</p>
+                <p class="footer-copy">© 2025 YourSignal. We extract signal from noise so you don't have to.</p>
+                <a href="#top" class="back-to-top">Back to top ↑</a>
             </div>
         </div>
     </footer>
